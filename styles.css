@@ -25,24 +25,30 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /*border:10px solid red;*/
+  /*border-radius:10px;*/
   position:absolute;
+  transition: all 1.0s ease;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 1.0s ease;
 }
 .spinner{
   height: auto;
   position: relative;
   z-index: 9999;
 }
-
 .canvas {
 margin-left: auto;
 margin-right: auto;
 height: 95%;
 width: 95%;
-border: 5px solid yellow;
+/*border: 5px solid yellow;*/
 }
-
+.partners{
+  border: 2px solid red;
+}
 /*Spins in place*/
 .spinning {
   position: absolute;
@@ -51,24 +57,24 @@ border: 5px solid yellow;
   -webkit-animation:spin 4s linear infinite;
   -moz-animation:spin 4s linear infinite;
   animation:spin 4s linear infinite;
-  transition: all 1.0s ease;
+/*  transition: all 1.0s ease;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   -o-transition: all 1.0s ease;
   -ms-transition: all 1.0s ease;
-}
+*/}
 
 .flyer{
 /*  width: 5%;*/
   height: auto;
   position: absolute;
   z-index: 9999;
-  transition: all 1.0s ease;
+/*  transition: all 1.0s ease;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   -o-transition: all 1.0s ease;
   -ms-transition: all 1.0s ease;
-}
+*/}
 
 .flyer img:hover{
 /*  width: 5%;*/
@@ -76,12 +82,12 @@ border: 5px solid yellow;
   width: auto;
   position: relative;
   z-index: 9999;
-  transition: all 1.0s ease;
+/*  transition: all 1.0s ease;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   -o-transition: all 1.0s ease;
   -ms-transition: all 1.0s ease;
-}
+*/}
 
 /*Orbits in place*/
 .flying {
@@ -96,7 +102,10 @@ border: 5px solid yellow;
     animation:spin 4s linear infinite;*/
 }
 
+.traveling{
+  position: absolute;
+}
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
