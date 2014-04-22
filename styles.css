@@ -3,13 +3,17 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url(images/dancefloor2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton, .danceAgainButton, .findPartners{
   padding:5px 12px;
   float:right;
 }
@@ -25,3 +29,74 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.spinner{
+  height: auto;
+  position: relative;
+  z-index: 9999;
+}
+
+.canvas {
+margin-left: auto;
+margin-right: auto;
+height: 95%;
+width: 95%;
+border: 5px solid yellow;
+}
+
+/*Spins in place*/
+.spinning {
+  position: absolute;
+  height: auto;
+  margin:-60px 0 0 -60px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+  transition: all 1.0s ease;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 1.0s ease;
+}
+
+.flyer{
+/*  width: 5%;*/
+  height: auto;
+  position: absolute;
+  z-index: 9999;
+  transition: all 1.0s ease;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 1.0s ease;
+}
+
+.flyer img:hover{
+/*  width: 5%;*/
+  height: 200px;
+  width: auto;
+  position: relative;
+  z-index: 9999;
+  transition: all 1.0s ease;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 1.0s ease;
+}
+
+/*Orbits in place*/
+.flying {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: solid 5px;
+    height: auto;
+    /*margin:-60px 0 0 -60px;*/
+    /*-webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;*/
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+

@@ -8,6 +8,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.step();
   this.setPosition(top, left);
   this._linedup = false;
+  this._nearOtherDancer = false;
 };
 
 Dancer.prototype.step = function(){
@@ -23,6 +24,9 @@ Dancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
   //
+  this._top = top;
+  this._left = left;
+
   this.$node.css({
     top: top,
     left: left
@@ -31,7 +35,8 @@ Dancer.prototype.setPosition = function(top, left){
 
 Dancer.prototype.lineUp = function(){
 
-  this.$node.css({"position": "absolute", left : 0});
+  var randomheight = $("body").height() * Math.random();
+  this.setPosition(randomheight, 0);
   this._linedup = true;
 
 };

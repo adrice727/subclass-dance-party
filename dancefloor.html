@@ -6,11 +6,20 @@
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
+    <script src="src/spinningDancer.js"></script>
+    <script src="src/flyingDancer.js"></script>
   </head>
   <body>
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">Add a blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeSpinningDancer">Add Homer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeFlyingDancer">Add an expandable astronaut</a>
+      <a href="#" class="findPartners" data-dancer-maker-function-name="findPartners">Find dance partners</a>
+      <a href="#" class="lineUpButton" data-dancer-maker-function-name="lineUp">Line up the dancers</a>
+      <a href="#" class="danceAgainButton" data-dancer-maker-function-name="danceAgain">Dance again!</a>
+      </div>
+      <div class="canvas"></div>
     <script src="src/init.js"></script>
   </body>
 </html>

@@ -23,8 +23,8 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $(".canvas").height() * Math.random(),
+      $(".canvas").width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -42,6 +42,28 @@ $(document).ready(function(){
   $(".danceAgainButton").on("click", function(event){
     for ( var i = 0; i < window.dancers.length; i++ ){
       window.dancers[i].danceAgain();
+    }
+  });
+
+  $(".findPartners").on("click", function(event){
+    var positions = [];
+    for ( var i = 0; i < window.dancers.length; i++ ){
+      for ( var j = 0; j < window.dancers.length; j++ ){
+        // debugger;
+        if ( window.dancers[i] === window.dancers[j]){ continue; }
+        var deltax = window.dancers[i]._left - window.dancers[j]._left;
+        var deltaxsquared = Math.pow(deltax, 2);
+        var deltay = window.dancers[i]._top - window.dancers[j]._top;
+        var deltaysquared = Math.pow(deltay, 2);
+        var distance = Math.sqrt(deltaxsquared + deltaysquared);
+        console.log("distance", distance);
+        if ( distance < 400 ){
+          window.dancers[i]._nearOtherDancer = true;
+        }else{
+          window.dancers[i]._nearOtherDancer = false;
+        }
+      }
+      console.log("near other dancer", window.dancers[i]._nearOtherDancer);
     }
   });
 
