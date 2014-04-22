@@ -7,6 +7,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
+  this._linedup = false;
 };
 
 Dancer.prototype.step = function(){
@@ -26,4 +27,16 @@ Dancer.prototype.setPosition = function(top, left){
     top: top,
     left: left
   });
+};
+
+Dancer.prototype.lineUp = function(){
+
+  this.$node.css({"position": "absolute", left : 0});
+  this._linedup = true;
+
+};
+
+Dancer.prototype.danceAgain = function(){
+
+  this.setPosition($("body").height() * Math.random(), $("body").width() * Math.random());
 };
