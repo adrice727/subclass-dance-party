@@ -34,6 +34,7 @@ Dancer.prototype.lineUp = function(){
 };
 Dancer.prototype.danceAgain = function(){
   this.setPosition($(".canvas").height() * Math.random(), $("body").width() * Math.random());
+  this._linedup = false;
 };
 
 // BlinkyDancer
@@ -56,8 +57,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps){
 var SpinningDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.prepend('<img class="spinner" src="images/homer.gif"/>');
-  this.$node.addClass('spinning');//.removeClass('dancer');
-  // this.$node.addClass('spinning');
+  this.$node.addClass('spinning transitions').removeClass('dancer');
 };
 
 SpinningDancer.prototype = Object.create(Dancer.prototype);
@@ -76,7 +76,7 @@ var makeSpinningDancer = function(top, left, timeBetweenSteps){
 var FlyingDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.prepend('<img class="flyer" src="images/astronaut.png" />');
-  this.$node.addClass('flyer')//.removeClass('dancer');
+  this.$node.addClass('flyer transitions').removeClass('dancer');
   this.large = false;
 };
 FlyingDancer.prototype = Object.create(Dancer.prototype);
@@ -94,7 +94,9 @@ var makeFlyingDancer = function(top, left, timeBetweenSteps){
 var TravelingDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.prepend('<img class="spinner" src="images/elephant.png"/>');
-  // this.$node.addClass('traveling').removeClass('dancer');
+  // this.$node.removeClass('dan');
+  // this.$node.addClass('transitions');
+  this.$node.addClass('traveling transitions').removeClass('dancer');
 };
 TravelingDancer.prototype = Object.create(Dancer.prototype);
 TravelingDancer.prototype.constructor = TravelingDancer;

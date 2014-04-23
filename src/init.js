@@ -46,10 +46,8 @@ $(document).ready(function(){
   });
 
   $(".findPartners").on("click", function(event){
-    var positions = [];
     for ( var i = 0; i < window.dancers.length; i++ ){
       for ( var j = 0; j < window.dancers.length; j++ ){
-        // debugger;
         if ( window.dancers[i] === window.dancers[j]){ continue; }
         var deltax = window.dancers[i]._left - window.dancers[j]._left;
         var deltaxsquared = Math.pow(deltax, 2);
@@ -63,7 +61,6 @@ $(document).ready(function(){
           window.dancers[i]._nearOtherDancer = false;
         }
       }
-      console.log("near other dancer", window.dancers[i]._nearOtherDancer);
     }
   });
 
